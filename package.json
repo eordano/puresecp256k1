@@ -1,7 +1,7 @@
 {
-  "name": "secp256k1",
+  "name": "puresecp256k1",
   "version": "3.7.1",
-  "description": "This module provides native bindings to ecdsa secp256k1 functions",
+  "description": "This module does not provide native bindings to ecdsa secp256k1 functions",
   "keywords": [
     "ec",
     "ecdh",
@@ -9,11 +9,12 @@
     "secp256k1"
   ],
   "bugs": {
-    "url": "https://github.com/cryptocoinjs/secp256k1-node/issues"
+    "url": "https://github.com/eordano/puresecp256k1/issues"
   },
-  "license": "MIT",
-  "author": "Martin Becze <mjbecze@gmail.com>",
+  "license": "Apache-2.0",
+  "author": "Esteban Ordano <eordano@gmail.com>",
   "contributors": [
+    "Martin Becze <mjbecze@gmail.com>",
     "Aaron Davis (https://github.com/kumavis)",
     "Ian Matyssik (https://github.com/phpb-com)",
     "Kagami Hiiragi <kagami@genshiken.org> (http://kagami.genshiken.org/)",
@@ -30,17 +31,11 @@
   "main": "./index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cryptocoinjs/secp256k1-node.git"
+    "url": "https://github.com/eordano/puresecp256k1.git"
   },
   "scripts": {
-    "coverage": "RANDOM_TESTS_REPEAT=1 nyc tape test/index.js",
-    "coverage-lcov": "npm run coverage && nyc report -r lcov",
-    "install": "npm run rebuild || echo \"Secp256k1 bindings compilation fail. Pure JS implementation will be used.\"",
     "lint": "standard",
-    "rebuild": "node-gyp rebuild",
-    "test": "npm run lint && npm run unit",
-    "test:browser": "karma start karma.conf.js",
-    "unit": "tape test/index.js"
+    "test:browser": "karma start karma.conf.js"
   },
   "dependencies": {
     "bip66": "^1.1.5",
